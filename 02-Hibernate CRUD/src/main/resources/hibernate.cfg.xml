@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- PostgreSQL Driver -->
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <!-- Database URL -->
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://localhost:5432/hibernate_db
+        </property>
+
+        <!-- Username -->
+        <property name="hibernate.connection.username">
+            postgres
+        </property>
+
+        <!-- Password -->
+        <property name="hibernate.connection.password">
+            0127
+        </property>
+
+        <!-- PostgreSQL Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.PostgreSQLDialect
+        </property>
+
+        <!-- Show Generated SQL -->
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+        <!-- Format SQL -->
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <!-- Automatically create/update tables -->
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <!-- Register Entity -->
+        <mapping class="com.abdallah.entity.Student"/>
+
+    </session-factory>
+
+</hibernate-configuration>

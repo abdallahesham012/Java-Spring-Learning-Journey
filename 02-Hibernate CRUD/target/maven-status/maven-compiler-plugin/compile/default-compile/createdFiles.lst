@@ -1,0 +1,3 @@
+com\abdallah\entity\Student.class
+com\abdallah\util\HibernateUtil.class
+com\abdallah\Main.class
