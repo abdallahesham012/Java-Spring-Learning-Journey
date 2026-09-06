@@ -51,8 +51,53 @@ ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
 - This project helped me understand how data flows between the application and the database.
 
 ### Next Step
-- Learn how to insert, update, and delete records using JDBC.
-- Move to Hibernate and understand the ORM approach.
+- Continue learning Hibernate and understand the ORM approach.
+
+---
+
+## Task 02 - Hibernate CRUD Project
+
+### Objective
+Learn how Hibernate simplifies database operations by mapping Java objects to database tables and implementing CRUD operations using ORM.
+
+### Concepts Covered
+- Hibernate ORM
+- JPA annotations
+- Entity mapping
+- PostgreSQL database connection
+- CRUD operations
+- HQL queries
+- Pagination
+- Criteria API
+- Transactions and sessions
+
+### Project Used
+- `02-Hibernate CRUD`
+
+### What I Did
+- Created a `Student` entity mapped to the `students` table.
+- Connected the application to PostgreSQL using Hibernate configuration.
+- Implemented insert, select, update, and delete operations.
+- Retrieved all students and searched using HQL.
+- Added pagination for student queries.
+- Practiced querying with the JPA Criteria API.
+
+### Key Notes
+- Hibernate is an ORM framework that maps Java classes to database tables.
+- The `@Entity`, `@Table`, `@Id`, and `@GeneratedValue` annotations define the entity mapping.
+- A Hibernate `Session` is used to communicate with the database.
+- Transactions are required for insert, update, and delete operations.
+- HQL queries use entity and property names instead of database table and column names.
+
+### Learnings
+- ORM reduces the amount of SQL and JDBC boilerplate code.
+- JPA annotations make the relationship between Java objects and database tables clear.
+- Hibernate supports multiple query approaches, including HQL and Criteria API.
+- Proper session and transaction handling is important for reliable database operations.
+
+### Next Step
+- Start learning Spring and understand dependency injection.
+- Connect Spring concepts with Hibernate and database applications.
 
 ---
 
@@ -60,7 +105,7 @@ ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
 When I finish another daily task, I will add a new section below this one like this:
 
 ```md
-## Task 02 - <Task Name>
+## Task 03 - <Task Name>
 
 ### Objective
 ...
