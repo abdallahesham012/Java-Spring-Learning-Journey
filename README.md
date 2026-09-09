@@ -101,11 +101,52 @@ Learn how Hibernate simplifies database operations by mapping Java objects to da
 
 ---
 
+## Task 03 - Spring Boot Start Project
+
+### Objective
+Learn the basics of Spring Boot, the IoC container, dependency injection, and Spring beans.
+
+### Concepts Covered
+- Spring Boot application setup
+- `ApplicationContext`
+- Inversion of Control (IoC)
+- Dependency Injection
+- `@Component`
+- `@Autowired`
+- Singleton bean scope
+
+### Project Used
+- `03-Spring Start`
+
+### What I Did
+- Created a Spring Boot application using Maven.
+- Registered `Student` and `StudentService` as Spring components.
+- Retrieved beans from the `ApplicationContext`.
+- Verified that Spring returns the same `Student` bean by default.
+- Injected `Student` into `StudentService` using `@Autowired`.
+- Called the service to start the student's study process.
+
+### Key Notes
+- `ApplicationContext` is Spring's IoC container and manages the application's beans.
+- `@Component` tells Spring to create and manage a class as a bean.
+- Dependency Injection allows Spring to provide required objects instead of creating them manually with `new`.
+- Spring beans use Singleton scope by default, so repeated lookups return the same object.
+
+### Learnings
+- Spring manages object creation and dependencies for the application.
+- `StudentService` can use `Student` without manually constructing it.
+- Spring Boot reduces the configuration needed to start a Spring application.
+
+### Next Step
+- Learn Spring configuration and different ways to define and inject beans.
+
+---
+
 ## How to Add the Next Task
 When I finish another daily task, I will add a new section below this one like this:
 
 ```md
-## Task 03 - <Task Name>
+## Task 04 - <Task Name>
 
 ### Objective
 ...
