@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ده ملف Spring Configuration.
+
+    Spring هيقرأ الملف ده
+    ويعرف منه الـ Beans والـ Dependencies.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- ===================================================== -->
+    <!-- 1. ADDRESS BEAN -->
+    <!-- ===================================================== -->
+
+    <!--
+        Bean
+
+        أي Object Spring هو المسؤول عن إنشائه وإدارته
+        بنسميه Spring Bean.
+
+        id:
+            اسم الـ Bean داخل Spring Container.
+
+        class:
+            الـ Java class اللي Spring هيعمل منه Object.
+
+        Spring تقريبًا هيعمل:
+
+        Address address = new Address();
+    -->
+
+    <bean id="address"
+          class="com.abdallah.model.Address">
+
+
+        <!--
+            Setter Injection
+
+            name="city"
+
+            معناها استخدم:
+
+            setCity()
+
+            value="Banha"
+
+            القيمة اللي هتدخل للـ setter.
+        -->
+
+        <property name="city"
+                  value="Banha"/>
+
+
+        <property name="street"
+                  value="El-Gomhoria Street"/>
+
+    </bean>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 2. EMPLOYEE BEAN -->
+    <!-- ===================================================== -->
+
+    <bean id="employee"
+          class="com.abdallah.model.Employee">
+
+
+        <!--
+            Constructor Injection
+
+            Spring هيبحث عن constructor
+            يستقبل القيم دي بالترتيب.
+
+            Employee constructor:
+
+            Employee(
+                int id,
+                String name,
+                double salary,
+                Address address
+            )
+        -->
+
+
+        <!--
+            أول parameter:
+
+            int id = 1
+
+            value في XML دايمًا String
+            لكن Spring بيعمل conversion للنوع المطلوب.
+
+            String -> int
+        -->
+
+        <constructor-arg value="1"/>
+
+
+        <!--
+            ثاني parameter:
+
+            String name
+        -->
+
+        <constructor-arg value="Abdallah"/>
+
+
+        <!--
+            ثالث parameter:
+
+            double salary
+        -->
+
+        <constructor-arg value="15000"/>
+
+
+        <!--
+            رابع parameter:
+
+            Address
+
+            هنا مش بنعمل Address جديد.
+
+            إحنا بنقول لـ Spring:
+
+            خد الـ Bean اللي اسمه "address"
+            وحطه في Employee.
+
+            ref = reference to another Bean
+        -->
+
+        <constructor-arg ref="address"/>
+
+    </bean>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 3. EMPLOYEE REPOSITORY -->
+    <!-- ===================================================== -->
+
+    <bean id="employeeRepository"
+          class="com.abdallah.repository.EmployeeRepository">
+
+
+        <!--
+            مفيش Dependencies هنا.
+
+            Spring بس هيعمل:
+
+            new EmployeeRepository();
+        -->
+
+    </bean>
+
+
+
+    <!-- ===================================================== -->
+    <!-- 4. EMPLOYEE SERVICE -->
+    <!-- ===================================================== -->
+
+    <bean id="employeeService"
+          class="com.abdallah.service.EmployeeService">
+
+
+        <!--
+            Setter Injection
+
+            Spring هيعمل تقريبًا:
+
+            EmployeeService service =
+                    new EmployeeService();
+
+            service.setEmployeeRepository(
+                    employeeRepository
+            );
+
+        -->
+
+        <property name="employeeRepository"
+                  ref="employeeRepository"/>
+
+    </bean>
+
+
+</beans>
