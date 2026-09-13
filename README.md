@@ -142,6 +142,46 @@ Learn the basics of Spring Boot, the IoC container, dependency injection, and Sp
 
 ---
 
+## Task 04 - Spring XML Demo Project
+
+### Objective
+Learn how to configure Spring using XML-based bean configuration and understand the basics of dependency injection without using annotations.
+
+### Concepts Covered
+- Spring XML configuration
+- `applicationContext.xml`
+- Bean definition in XML
+- Dependency injection via XML
+- Spring container setup
+- Service and repository decoupling
+
+### Project Used
+- `04-SpringXMLDemo`
+
+### What I Did
+- Created a Spring project configured with XML bean definitions.
+- Defined beans in `applicationContext.xml` for the model, repository, and service layers.
+- Injected dependencies using Spring XML configuration.
+- Loaded the container using `ClassPathXmlApplicationContext`.
+- Accessed the service bean and verified dependency injection was working.
+
+### Key Notes
+- XML configuration is one of the classic ways to define Spring beans.
+- Beans are declared in an XML file and then loaded by the Spring container.
+- Dependency injection can be configured by constructor or setter injection.
+- Spring separates object creation from business logic, making code easier to manage.
+
+### Learnings
+- Spring can work without annotations using XML configuration.
+- The container reads bean definitions and wires dependencies automatically.
+- XML-based Spring still follows the same IoC and DI principles as annotation-based configuration.
+- This project helped me understand the core idea behind Spring bean wiring.
+
+### Next Step
+- Learn Spring Java-based configuration and compare it with XML-based configuration.
+
+---
+
 ## How to Add the Next Task
 When I finish another daily task, I will add a new section below this one like this:
 
