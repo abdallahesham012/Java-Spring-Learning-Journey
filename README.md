@@ -182,6 +182,47 @@ Learn how to configure Spring using XML-based bean configuration and understand 
 
 ---
 
+## Task 05 - Spring Java Configuration Demo Project
+
+### Objective
+Learn how to configure a Spring application using Java classes instead of XML files, and understand how the Spring container manages beans through configuration classes.
+
+### Concepts Covered
+- Java-based Spring configuration
+- `@Configuration`
+- `@Bean`
+- Dependency injection in configuration classes
+- Spring container initialization
+- Bean wiring without XML
+
+### Project Used
+- `05-SpringConfigDemo`
+
+### What I Did
+- Created a Spring project that uses Java configuration instead of XML.
+- Defined a configuration class using `@Configuration`.
+- Registered beans using `@Bean` methods.
+- Injected dependencies through the Spring container.
+- Created the application context with `AnnotationConfigApplicationContext`.
+- Verified that Spring successfully created and wired the required beans.
+
+### Key Notes
+- `@Configuration` marks a class as a Spring configuration source.
+- `@Bean` tells Spring to create and manage an object as a bean.
+- Java-based configuration is cleaner and more modern than XML configuration.
+- Spring can use annotation-based and Java-based setup together depending on the project needs.
+
+### Learnings
+- Java configuration is more readable and maintainable than XML.
+- Bean dependencies can be resolved without hardcoding object creation.
+- Spring containers can be initialized from Java classes, which is the modern standard in many applications.
+- This project helped me transition from XML configuration to the modern Spring style.
+
+### Next Step
+- Continue learning advanced Spring concepts such as component scanning, annotations, and real application architecture.
+
+---
+
 ## How to Add the Next Task
 When I finish another daily task, I will add a new section below this one like this:
 
